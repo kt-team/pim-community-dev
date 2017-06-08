@@ -5,22 +5,17 @@ namespace spec\Pim\Bundle\CatalogBundle\EventSubscriber;
 use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
 use Pim\Bundle\CatalogBundle\EventSubscriber\LoadProductValuesSubscriber;
 use PhpSpec\ObjectBehavior;
-use Pim\Component\Catalog\Factory\ProductValueCollectionFactory;
-use Pim\Component\Catalog\Factory\ProductValueFactory;
-use Pim\Component\Catalog\Model\AttributeInterface;
+use Pim\Component\Catalog\Factory\ProductValueCollectionFactoryInterface;
 use Pim\Component\Catalog\Model\ProductInterface;
 use Pim\Component\Catalog\Model\ProductValueCollectionInterface;
-use Pim\Component\Catalog\Model\ProductValueInterface;
-use Pim\Component\Catalog\Repository\AttributeRepositoryInterface;
 use Prophecy\Argument;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 class LoadProductValuesSubscriberSpec extends ObjectBehavior
 {
     function let(
         ContainerInterface $container,
-        ProductValueCollectionFactory $valueCollectionFactory
+        ProductValueCollectionFactoryInterface $valueCollectionFactory
     ) {
         $this->beConstructedWith($container);
 

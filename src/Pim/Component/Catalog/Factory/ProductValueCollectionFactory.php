@@ -6,7 +6,6 @@ use Akeneo\Component\StorageUtils\Repository\CachedObjectRepositoryInterface;
 use Pim\Component\Catalog\Exception\InvalidAttributeException;
 use Pim\Component\Catalog\Exception\InvalidOptionException;
 use Pim\Component\Catalog\Model\ProductValueCollection;
-use Pim\Component\Catalog\Model\ProductValueCollectionInterface;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -16,7 +15,7 @@ use Psr\Log\LoggerInterface;
  * @copyright 2017 Akeneo SAS (http://www.akeneo.com)
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-class ProductValueCollectionFactory
+class ProductValueCollectionFactory implements ProductValueCollectionFactoryInterface
 {
     /** @var ProductValueFactory */
     private $valueFactory;
@@ -43,15 +42,12 @@ class ProductValueCollectionFactory
     }
 
     /**
-     * Create product values from raw values described in the storage format.
+     * {@inheritdoc}
+     *
      * Raw values that correspond to an non existing attribute (that was deleted
      * for instance) are NOT loaded.
      *
      * @see \Pim\Component\Catalog\Normalizer\Storage\Product\ProductValuesNormalizer.php
-     *
-     * @param array $rawValues
-     *
-     * @return ProductValueCollectionInterface
      */
     public function createFromStorageFormat(array $rawValues)
     {

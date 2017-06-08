@@ -6,7 +6,7 @@ use Akeneo\Component\StorageUtils\Repository\CachedObjectRepositoryInterface;
 use PhpSpec\ObjectBehavior;
 use Pim\Component\Catalog\Exception\InvalidAttributeException;
 use Pim\Component\Catalog\Exception\InvalidOptionException;
-use Pim\Component\Catalog\Factory\ProductValueCollectionFactory;
+use Pim\Component\Catalog\Factory\ProductValueCollectionFactoryInterface;
 use Pim\Component\Catalog\Factory\ProductValueFactory;
 use Pim\Component\Catalog\Model\AttributeInterface;
 use Pim\Component\Catalog\Model\ProductValueCollection;
@@ -26,7 +26,7 @@ class ProductValueCollectionFactorySpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType(ProductValueCollectionFactory::class);
+        $this->shouldHaveType(ProductValueCollectionFactoryInterface::class);
     }
 
     function it_creates_a_values_collection_from_the_storage_format(
@@ -140,7 +140,7 @@ class ProductValueCollectionFactorySpec extends ObjectBehavior
                 'red'
             )
         );
-        
+
         $logger->warning('Tried to load a product value with the option "color.red" that does not exist.');
 
         $actualValues = $this->createFromStorageFormat([
