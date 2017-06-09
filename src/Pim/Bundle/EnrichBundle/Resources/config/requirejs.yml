@@ -808,8 +808,8 @@ config:
         pim/common/grid:                       pimenrich/js/form/common/grid
         pim/common/redirect:                   pimenrich/js/form/common/redirect
         pim/common/column-list-view:           pimenrich/js/common/column-list-view
+        pim/common/tab:                        pimenrich/js/form/common/tab
         pim/common/tab/history:                pimenrich/js/form/common/tab/history
-        pim/common/tab/properties:             pimenrich/js/form/common/tab/properties
         pim/common/properties/translation:     pimenrich/js/form/common/properties/translation
         pim/common/properties/general:         pimenrich/js/form/common/properties/general
         pim/common/add-select:                 pimenrich/js/form/common/add-select/select
@@ -892,8 +892,8 @@ config:
         pim/template/form/save:                                   pimenrich/templates/form/save.html
         pim/template/form/delete:                                 pimenrich/templates/form/delete.html
         pim/template/form/tab/history:                            pimenrich/templates/form/tab/history.html
-        pim/template/form/tab/properties:                         pimenrich/templates/form/tab/properties.html
         pim/template/form/tab/section:                            pimenrich/templates/form/tab/section.html
+        pim/template/form/tab/sections:                           pimenrich/templates/form/tab/sections.html
         pim/template/form/grid:                                   pimenrich/templates/form/grid.html
         pim/template/form/add-select/select:                      pimenrich/templates/form/add-select/select.html
         pim/template/form/add-select/line:                        pimenrich/templates/form/add-select/line.html
