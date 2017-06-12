@@ -48,8 +48,8 @@ abstract class AbstractUserHandler
     {
         $this->form->setData($user);
 
-        if (in_array($this->request->getMethod(), ['POST', 'PUT'])) {
-            $this->form->submit($this->request);
+        if (in_array($this->getRequest()->getMethod(), ['POST', 'PUT'])) {
+            $this->form->submit($this->getRequest());
 
             if ($this->form->isValid()) {
                 $this->onSuccess($user);

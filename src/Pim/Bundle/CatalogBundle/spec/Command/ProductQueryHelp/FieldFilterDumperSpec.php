@@ -3,6 +3,7 @@
 namespace spec\Pim\Bundle\CatalogBundle\Command\ProductQueryHelp;
 
 use PhpSpec\ObjectBehavior;
+use Pim\Bundle\CatalogBundle\Command\DumperInterface;
 use Pim\Component\Catalog\Query\Filter\FieldFilterInterface;
 use Pim\Component\Catalog\Query\Filter\FilterRegistryInterface;
 use Prophecy\Argument;
@@ -19,7 +20,7 @@ class FieldFilterDumperSpec extends ObjectBehavior
 
     function it_is_a_dumper()
     {
-        $this->shouldImplement('Pim\Bundle\CatalogBundle\Command\DumperInterface');
+        $this->shouldImplement(DumperInterface::class);
     }
 
     function it_dumps_field_filters(

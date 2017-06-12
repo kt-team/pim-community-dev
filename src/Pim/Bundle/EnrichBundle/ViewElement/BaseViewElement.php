@@ -13,6 +13,7 @@ use Pim\Bundle\EnrichBundle\ViewElement\Checker\VisibilityCheckerInterface;
  */
 class BaseViewElement implements ViewElementInterface
 {
+
     /** @var string */
     protected $alias;
 
