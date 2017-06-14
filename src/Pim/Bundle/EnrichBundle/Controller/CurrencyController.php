@@ -58,12 +58,20 @@ class CurrencyController
             $currency->toggleActivation();
             $this->currencySaver->save($currency);
 
-            $request->getFlashBag()->add('success', new Message('flash.currency.updated'));
+            $request
+                ->getSession()
+                ->getFlashBag()
+                ->add('success', new Message('flash.currency.updated'));
         } catch (LinkedChannelException $e) {
-            $request->getFlashBag()
+            $request
+                ->getSession()
+                ->getFlashBag()
                 ->add('error', new Message('flash.currency.error.linked_to_channel'));
         } catch (\Exception $e) {
-            $request->getFlashBag()->add('error', new Message('flash.error ocurred'));
+            $request
+                ->getSession()
+                ->getFlashBag()
+                ->add('error', new Message('flash.error ocurred'));
         }
 
         return new JsonResponse(['route' => 'pim_enrich_currency_index']);
