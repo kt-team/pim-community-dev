@@ -128,8 +128,6 @@ class UserController extends Controller
             );
         }
 
-        echo "plop";
-
         return [
             'form'      => $this->get('oro_user.form.user')->createView(),
             'editRoute' => $updateRoute
